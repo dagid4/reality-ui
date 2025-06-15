@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reality Dismo</title>
+    <title>Dismo</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -14,27 +14,24 @@
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         :root {
-            --brand-primary: #f72585; /* pink */
-            --brand-accent: #b5179e; /* purple */
+            --brand-primary: #6f42c1;
+            --brand-accent: #d63384;
         }
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(180deg, #fff0f7 0%, #ffe6f2 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
         }
         .brand-gradient {
-            background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
-        }
-        .brand-solid {
             background-color: var(--brand-primary);
         }
         .navbar-brand { font-weight: 600; }
         .btn-primary {
-            background-color: var(--brand-accent);
-            border-color: var(--brand-accent);
+            background-color: var(--brand-primary);
+            border-color: var(--brand-primary);
         }
         .btn-primary:hover {
-            background-color: #941b80;
-            border-color: #941b80;
+            background-color: #b52e6c;
+            border-color: #b52e6c;
         }
         .filter-sidebar {
             position: sticky;
@@ -66,16 +63,16 @@
 <body>
 
     <!-- Navigace -->
-    <nav class="navbar navbar-expand-lg navbar-dark brand-solid sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark brand-gradient sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="bi bi-house-heart-fill fs-4 me-2"></i>
-                Reality Dismo
+                <i class="bi bi-buildings-fill fs-4 me-2"></i>
+                Dismo
             </a>
-            <span class="navbar-text text-light ms-3 d-none d-md-block">Váš průvodce nemovitostmi</span>
+            <span class="navbar-text text-light ms-3 d-none d-md-block">Realitní vyhledávač</span>
             <div class="ms-auto d-flex">
-                 <a class="nav-link text-white me-3" href="#"><i class="bi bi-heart"></i></a>
-                 <a class="nav-link text-white" href="#"><i class="bi bi-bell"></i></a>
+                 <a class="nav-link text-white me-3" href="#"><i class="bi bi-heart"></i> Oblíbené</a>
+                 <a class="nav-link text-white" href="#"><i class="bi bi-bell"></i> Hlídací pes</a>
             </div>
         </div>
     </nav>
@@ -109,7 +106,7 @@
                 </div>
                 <div class="d-none d-lg-block mb-4"><div class="map-placeholder"><div class="text-muted"><i class="bi bi-geo-alt-fill fs-1"></i><h4>Zde bude interaktivní mapa</h4></div></div></div>
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="mb-0">Výsledky hledání (ukázka seskupených zdrojů)</h4>
+                    <h4 class="mb-0">Výsledky hledání</h4>
                     <select class="form-select form-select-sm" style="width: auto;"><option selected>Řadit od nejnovějších</option><option value="1">Od nejlevnějších</option><option value="2">Od nejdražších</option></select>
                 </div>
 
@@ -378,7 +375,7 @@
         <div class="row">
           <div class="col-12 col-md">
             <i class="bi bi-house-door-fill" style="font-size: 24px;"></i>
-            <small class="d-block mb-3 text-muted">© 2024 Reality Dismo</small>
+            <small class="d-block mb-3 text-muted">© 2024 Dismo</small>
           </div>
           <div class="col-6 col-md">
             <h5>O nás</h5>
