@@ -16,6 +16,8 @@
         :root {
             --brand-primary: #6f42c1;
             --brand-accent: #d63384;
+            --bs-primary: var(--brand-primary);
+            --bs-secondary: var(--brand-accent);
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -25,14 +27,6 @@
             background-color: var(--brand-primary);
         }
         .navbar-brand { font-weight: 600; }
-        .btn-primary {
-            background-color: var(--brand-primary);
-            border-color: var(--brand-primary);
-        }
-        .btn-primary:hover {
-            background-color: #b52e6c;
-            border-color: #b52e6c;
-        }
         .filter-sidebar {
             position: sticky;
             top: calc(3.5rem + 1rem);
