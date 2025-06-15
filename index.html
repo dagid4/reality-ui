@@ -13,7 +13,11 @@
 
     <style>
         .filter-sidebar {
-            position: sticky; top: 1rem; max-height: calc(100vh - 2rem); overflow-y: auto;
+            /* Keep the sidebar below the fixed navbar when scrolling */
+            position: sticky;
+            top: calc(3.5rem + 1rem); /* navbar height (approx. 3.5rem) + spacing */
+            max-height: calc(100vh - 5.5rem); /* viewport height minus navbar and bottom spacing */
+            overflow-y: auto;
         }
         .map-placeholder {
             background-color: #e9ecef; height: 100%; min-height: 400px; display: flex;
