@@ -22,6 +22,9 @@
         .card-img-top {
             width: 100%; height: 200px; object-fit: cover;
         }
+        .source-logo { height: 16px; vertical-align: text-bottom; margin-right: 5px; }
+        .card-body { display: flex; flex-direction: column; }
+        .sources-section { margin-top: auto; padding-top: 1rem; border-top: 1px solid #dee2e6; }
     </style>
 </head>
 <body class="bg-light">
@@ -66,7 +69,7 @@
                 </div>
                 <div class="d-none d-lg-block mb-4"><div class="map-placeholder"><div class="text-muted"><i class="bi bi-geo-alt-fill fs-1"></i><h4>Zde bude interaktivní mapa</h4></div></div></div>
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="mb-0">Výsledky hledání (6 nalezeno)</h4>
+                    <h4 class="mb-0">Výsledky hledání (ukázka seskupených zdrojů)</h4>
                     <select class="form-select form-select-sm" style="width: auto;"><option selected>Řadit od nejnovějších</option><option value="1">Od nejlevnějších</option><option value="2">Od nejdražších</option></select>
                 </div>
 
@@ -75,137 +78,92 @@
                 <!-- ============================================= -->
                 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
                     
-                    <!-- Příklad 1: Více zdrojů, každý s jedním odkazem -->
+                    <!-- Příklad 1: Nemovitost s více inzeráty na jednom portálu -->
                     <div class="col">
                         <div class="card h-100 shadow-sm">
-                            <img src="https://picsum.photos/seed/dum1/600/400" class="card-img-top" alt="Náhled bytu">
-                            <div class="card-body pb-0"> <!-- pb-0 odebere padding dole, aby lépe navazovala patička -->
-                                <h5 class="card-title fw-bold">6 250 000 Kč</h5>
-                                <p class="card-text fs-5">Prodej, Byt 3+kk, 78 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Praha 4 - Pankrác</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroje inzerátu:</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <a href="https://www.sreality.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Sreality.cz</a>
-                                    <a href="https://reality.idnes.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Reality.idnes.cz</a>
+                            <img src="https://picsum.photos/seed/byt1/600/400" class="card-img-top" alt="Náhled bytu">
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title fw-bold">6 250 000 Kč</h5>
+                                    <p class="card-text fs-5">Prodej, Byt 3+kk, 78 m²</p>
+                                    <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Praha 4 - Pankrác, Na Strži</p>
+                                </div>
+                                
+                                <!-- NOVÁ SEKCE SE ZDROJI -->
+                                <div class="sources-section mt-3">
+                                     <h6 class="card-subtitle text-muted mb-2 small">Zdroje inzerátů:</h6>
+                                     <div class="d-flex flex-wrap gap-2">
+                                        <!-- DROPDOWN pro Sreality -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="https://www.sreality.cz/favicon.ico" class="source-logo" alt=""> Sreality.cz (2)
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="https://www.sreality.cz/detail/prodej/byt/3+kk/praha-pankrac-na-strzi/123456" target="_blank">Inzerát #123456 (RK Novák)</a></li>
+                                                <li><a class="dropdown-item" href="https://www.sreality.cz/detail/prodej/byt/3+kk/praha-pankrac-na-strzi/789012" target="_blank">Inzerát #789012 (RK Dvořák)</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- JEDNODUCHÝ ODKAZ pro iDnes -->
+                                        <a href="https://reality.idnes.cz/detail/ABC" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <img src="https://reality.idnes.cz/favicon.ico" class="source-logo" alt=""> Reality.idnes.cz
+                                        </a>
+                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Příklad 2: Více zdrojů, jeden s více inzeráty (dropdown) -->
+                    <!-- Příklad 2: Nemovitost s jedním inzerátem na více portálech -->
                     <div class="col">
                         <div class="card h-100 shadow-sm">
                             <img src="https://picsum.photos/seed/dum2/600/400" class="card-img-top" alt="Náhled domu">
-                            <div class="card-body pb-0">
-                                <h5 class="card-title fw-bold">35 000 Kč / měsíc</h5>
-                                <p class="card-text fs-5">Pronájem, Dům 5+1, 150 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Brno - Žabovřesky</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroje inzerátu:</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <!-- Split button pro Sreality -->
-                                    <div class="btn-group">
-                                        <a href="https://www.sreality.cz/detail/1" target="_blank" class="btn btn-sm btn-primary">Sreality.cz (nový)</a>
-                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="visually-hidden">Další inzeráty</span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="https://www.sreality.cz/detail/2" target="_blank">Inzerát #5688412</a></li>
-                                            <li><a class="dropdown-item" href="https://www.sreality.cz/detail/3" target="_blank">Inzerát #4998110 (starší)</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Normální tlačítko pro iDNES -->
-                                    <a href="https://reality.idnes.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Reality.idnes.cz</a>
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title fw-bold">35 000 Kč / měsíc</h5>
+                                    <p class="card-text fs-5">Pronájem, Dům 5+1, 150 m²</p>
+                                    <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Brno - Žabovřesky, Fanderlíkova</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Příklad 3: Jeden zdroj, jeden odkaz -->
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://picsum.photos/seed/dum3/600/400" class="card-img-top" alt="Náhled pozemku">
-                            <div class="card-body pb-0">
-                                <h5 class="card-title fw-bold">3 100 000 Kč</h5>
-                                <p class="card-text fs-5">Prodej, Pozemek pro bydlení, 950 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Jílové u Prahy</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroj inzerátu:</h6>
-                                 <div class="d-flex flex-wrap gap-2">
-                                    <a href="https://www.bezrealitky.cz/" target="_blank" class="btn btn-sm btn-outline-secondary">Bezrealitky.cz</a>
-                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Příklad 4: Další byt s více zdroji -->
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://picsum.photos/seed/dum4/600/400" class="card-img-top" alt="Náhled bytu">
-                            <div class="card-body pb-0">
-                                <h5 class="card-title fw-bold">4 800 000 Kč</h5>
-                                <p class="card-text fs-5">Prodej, Byt 2+1, 65 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Plzeň - Slovany</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroje inzerátu:</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <a href="https://www.sreality.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Sreality.cz</a>
-                                    <a href="https://www.bezrealitky.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Bezrealitky.cz</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Příklad 5: Pronájem garsonky -->
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://picsum.photos/seed/dum5/600/400" class="card-img-top" alt="Náhled garsonky">
-                            <div class="card-body pb-0">
-                                <h5 class="card-title fw-bold">12 000 Kč / měsíc</h5>
-                                <p class="card-text fs-5">Pronájem, Garsonka 1+kk, 35 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Ostrava - Poruba</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroj inzerátu:</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <a href="https://www.sreality.cz" target="_blank" class="btn btn-sm btn-outline-secondary">Sreality.cz</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Příklad 6: Chata s více inzeráty -->
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="https://picsum.photos/seed/dum6/600/400" class="card-img-top" alt="Náhled chaty">
-                            <div class="card-body pb-0">
-                                <h5 class="card-title fw-bold">2 500 000 Kč</h5>
-                                <p class="card-text fs-5">Prodej, Chata 4+kk, 120 m²</p>
-                                <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Šumava</p>
-                            </div>
-                            <div class="card-footer bg-white border-top-0 pt-3">
-                                <h6 class="card-subtitle mb-2 text-muted small">Zdroje inzerátu:</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <div class="btn-group">
-                                        <a href="https://www.sreality.cz/chata/new" target="_blank" class="btn btn-sm btn-primary">Sreality.cz (nový)</a>
-                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="visually-hidden">Další inzeráty</span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="https://www.sreality.cz/chata/old1" target="_blank">Inzerát #123456</a></li>
-                                            <li><a class="dropdown-item" href="https://www.sreality.cz/chata/old2" target="_blank">Inzerát #654321</a></li>
-                                        </ul>
+                                
+                                <!-- NOVÁ SEKCE SE ZDROJI -->
+                                <div class="sources-section mt-3">
+                                    <h6 class="card-subtitle text-muted mb-2 small">Zdroje inzerátů:</h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <a href="https://reality.idnes.cz/detail/DEF" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <img src="https://reality.idnes.cz/favicon.ico" class="source-logo" alt=""> Reality.idnes.cz
+                                        </a>
+                                        <a href="https://www.bezrealitky.cz/detail/GHI" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <img src="https://www.bezrealitky.cz/favicon.ico" class="source-logo" alt=""> Bezrealitky.cz
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Příklad 3: Nemovitost jen s jedním inzerátem -->
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://picsum.photos/seed/pozemek3/600/400" class="card-img-top" alt="Náhled pozemku">
+                            <div class="card-body">
+                                <div>
+                                   <h5 class="card-title fw-bold">3 100 000 Kč</h5>
+                                   <p class="card-text fs-5">Prodej, Pozemek pro bydlení, 950 m²</p>
+                                   <p class="card-text text-muted"><i class="bi bi-geo-alt-fill"></i> Jílové u Prahy</p>
+                                </div>
+
+                                <!-- NOVÁ SEKCE SE ZDROJI -->
+                                <div class="sources-section mt-3">
+                                    <h6 class="card-subtitle text-muted mb-2 small">Zdroj inzerátu:</h6>
+                                     <div class="d-flex flex-wrap gap-2">
+                                        <a href="https://www.sreality.cz/detail/JKL" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                            <img src="https://www.sreality.cz/favicon.ico" class="source-logo" alt=""> Sreality.cz
+                                        </a>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div><!-- .row -->
             </main>
         </div><!-- .row -->
